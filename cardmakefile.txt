@@ -1,0 +1,18 @@
+#Programmer: Matthew Thorne
+#Date: 11/26/11
+
+all:card.exe
+
+card.exe: cardclass.o poker.o blackjack.o pokermain.o
+	g++ cardclass.o poker.o blackjack.o pokermain.o -o card.exe
+
+pokermain.o: pokermain.cpp
+	g++ -c pokermain.cpp
+blackjack.o:blackjack.cpp
+	g++ -c blackjack.cpp
+poker.o: poker.cpp
+	g++ -c poker.cpp
+cardclass.o: cardclass.cpp
+	g++ -c cardclass.cpp
+clean:
+	rm -rf *o card.exe

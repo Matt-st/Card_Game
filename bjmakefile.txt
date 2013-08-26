@@ -1,0 +1,16 @@
+#Programmer: Matthew Thorne
+#Date: 11/26/11
+
+all:bj.exe
+
+bj.exe: cardclass.o blackjack.o blackjackengine.o
+	g++ cardclass.o blackjack.o blackjackengine.o -o bj.exe
+
+blackjackengine.o: blackjackengine.cpp
+	g++ -c blackjackengine.cpp
+blackjack.o: blackjack.cpp
+	g++ -c blackjack.cpp
+cardclass.o: cardclass.cpp
+	g++ -c cardclass.cpp
+clean:
+	rm -rf *o bj.exe
